@@ -228,7 +228,11 @@ export async function resolveTrustedPathFromPath(
   for (const candidate of candidates) {
     try {
       const resolved = await realpath(candidate);
-      if (basename(resolved) === 'rustup' && executableName === 'cargo') continue;
+      // Homebrew also exposes Cargo through a rustup-init alias. Both proxies
+      // require external rustup state; resolve a real toolchain binary instead.
+      if (executableName === 'cargo' && ['rustup', 'rustup-init'].includes(basename(resolved))) {
+        continue;
+      }
       const executable = await resolveTrustedExecutable(candidate, workspaceRoot);
       const searchDirectory = await resolveTrustedSearchDirectory(
         dirname(candidate),
