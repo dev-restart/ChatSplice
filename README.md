@@ -100,7 +100,7 @@ Pushing to `main` runs checks. A matching `v*` version tag publishes a GitHub Re
 
 Current unsigned builds use manual updates: choose **ChatSplice → 업데이트 확인…** (Check for Updates), download the new release, and replace the app. Automatic updates require a signed build, Apple credentials, and verification. The code is prepared; see [release setup](docs/release-distribution.md) to enable it.
 
-Local execution through the Tunnel has been verified on one ChatGPT account. Broader account tests, hosted CI, fresh installs, upgrades, and signed updates remain on the [release checklist](RELEASE_CHECKLIST.md).
+Local execution through the Tunnel has been verified on one ChatGPT account, and GitHub CI has passed. Broader account tests, fresh installs, upgrades, and signed updates remain on the [release checklist](RELEASE_CHECKLIST.md).
 
 Source publication does not list an app in ChatGPT's public directory. Tunnels are private developer connections; public apps follow a separate [OpenAI submission process](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels). Account permissions, usage limits, and service terms still apply.
 

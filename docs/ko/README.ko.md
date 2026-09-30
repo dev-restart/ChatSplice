@@ -97,7 +97,7 @@ MCP로 읽은 파일 내용은 요청 처리를 위해 ChatGPT에 전달됩니�
 
 현재 서명되지 않은 앱은 **ChatSplice → 업데이트 확인…**에서 새 버전을 받아 직접 교체합니다. 자동 업데이트 코드는 준비되어 있지만, 서명된 빌드와 Apple 자격 증명, 실제 동작 검증이 필요합니다. 설정 방법은 [배포 안내](../release-distribution.md)에 있습니다.
 
-ChatGPT 계정 하나에서 Tunnel을 통한 로컬 실행을 확인했습니다. 더 넓은 계정 검증, GitHub CI 실행, 새 설치, 업그레이드, 서명된 업데이트 확인은 [릴리즈 체크리스트](../../RELEASE_CHECKLIST.md)에 남아 있습니다.
+ChatGPT 계정 하나에서 Tunnel을 통한 로컬 실행을 확인했고 GitHub CI도 통과했습니다. 더 넓은 계정 검증, 새 설치, 업그레이드, 서명된 업데이트 확인은 [릴리즈 체크리스트](../../RELEASE_CHECKLIST.md)에 남아 있습니다.
 
 소스 공개만으로 ChatGPT 공개 앱 목록에 등록되지는 않습니다. Tunnel은 비공개 개발 연결용이며, 공개 앱은 [OpenAI의 별도 등록 절차](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)를 따릅니다. 계정 권한, 사용량 제한, 서비스 약관은 그대로 적용됩니다.
 
