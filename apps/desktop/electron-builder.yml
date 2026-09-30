@@ -1,0 +1,38 @@
+appId: com.chatsplice.desktop
+productName: ChatSplice
+artifactName: '${productName}-${version}-${arch}.${ext}'
+copyright: Copyright © 2026 ChatSplice contributors
+
+directories:
+  output: release
+  buildResources: resources
+
+files:
+  - dist/main/**
+  - dist/preload/**
+  - dist/renderer/**
+  - package.json
+
+# node-pty ships a native pty.node binding and spawn-helper binary; both must
+# stay outside asar to be executable/loadable.
+asarUnpack:
+  - '**/node_modules/node-pty/**'
+
+# Daemon bundle produced by scripts/package-daemon.mjs is copied by the
+# afterPack hook (scripts/after-pack.mjs); extraResources cannot be used
+# because its default ignores drop the bundled node_modules native binding.
+afterPack: scripts/after-pack.mjs
+
+mac:
+  # Explicitly unsigned: certificates alone do not override identity: null.
+  # Signed builds opt in with electron-builder.signed.cjs; never override implicitly.
+  identity: null
+  icon: app-icon.png
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch: [arm64]
+  # The app needs no special entitlements: child processes (daemon via
+  # ELECTRON_RUN_AS_NODE, node-pty shells) run as the invoking user.
+  extendInfo:
+    NSMicrophoneUsageDescription: ''

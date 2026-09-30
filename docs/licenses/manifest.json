@@ -1,0 +1,337 @@
+[
+  {
+    "name": "@earendil-works/pi-agent-core",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-ai",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-client",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-coding-agent",
+    "version": "0.84.1",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/53fa77ccd8a279eb87e92294ef3687b03ff80112/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-protocol",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-telemetry",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@earendil-works/pi-tui",
+    "version": "0.84.4",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/earendil-works/pi/b79e4cc834970cca69daebffab7df1da7d1e52c4/LICENSE",
+    "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+    "file": "upstream/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt"
+  },
+  {
+    "name": "@esbuild/darwin-arm64",
+    "version": "0.28.2",
+    "declaredLicense": "MIT",
+    "source": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/LICENSE.md",
+    "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+    "file": "upstream/b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681.txt"
+  },
+  {
+    "name": "@rolldown/binding-darwin-arm64",
+    "version": "1.2.3",
+    "source": "https://github.com/rolldown/rolldown/blob/52dbd194ea6b6d4320706caa5f2db14b1034adaf/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+    "file": "upstream/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt"
+  },
+  {
+    "name": "app-builder-lib",
+    "version": "26.15.3",
+    "source": "https://github.com/electron-userland/electron-builder/blob/512a57ec9bcda593d3e0970bd2b9a33a63beeb57/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "bed8d0ab3e6031817f775a641ff37313b0f5591bc8ba0ed79b978dafbd4231ce",
+    "file": "upstream/bed8d0ab3e6031817f775a641ff37313b0f5591bc8ba0ed79b978dafbd4231ce.txt"
+  },
+  {
+    "name": "dmg-builder",
+    "version": "26.15.3",
+    "source": "https://github.com/electron-userland/electron-builder/blob/512a57ec9bcda593d3e0970bd2b9a33a63beeb57/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "bed8d0ab3e6031817f775a641ff37313b0f5591bc8ba0ed79b978dafbd4231ce",
+    "file": "upstream/bed8d0ab3e6031817f775a641ff37313b0f5591bc8ba0ed79b978dafbd4231ce.txt"
+  },
+  {
+    "name": "imurmurhash",
+    "version": "0.1.4",
+    "source": "https://github.com/jensyt/imurmurhash-js/blob/9f40361c7e2835a9b7b8eaa1cbab2a9f94ee22a2/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "fa0943ddcaa857d901a9eb92254d89876297ecdfbc884d294a927df08ebcbbe8",
+    "file": "upstream/fa0943ddcaa857d901a9eb92254d89876297ecdfbc884d294a927df08ebcbbe8.txt"
+  },
+  {
+    "name": "isarray",
+    "version": "1.0.0",
+    "source": "https://github.com/juliangruber/isarray/blob/2a23a281f369e9ae06394c0fb4d2381355a6ba33/README.md#license",
+    "review": "package-revision-or-version-tag",
+    "sha256": "66aa9feab8bb39aceebd69f2a357015d57ceab486d3c7a19ff8d3d4110a6d101",
+    "file": "upstream/66aa9feab8bb39aceebd69f2a357015d57ceab486d3c7a19ff8d3d4110a6d101.txt"
+  },
+  {
+    "name": "keyv",
+    "version": "4.5.4",
+    "source": "https://github.com/jaredwray/keyv/blob/12415c524e42d9b6ac29322d643eaeeb3f0cde33/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-revision",
+    "sha256": "f3a25fb846504d92627388f112f326ce91a9202e65d787d0b6ec79c96076d84d",
+    "file": "upstream/f3a25fb846504d92627388f112f326ce91a9202e65d787d0b6ec79c96076d84d.txt"
+  },
+  {
+    "name": "@aws-sdk/credential-provider-http",
+    "version": "3.972.72",
+    "source": "https://github.com/aws/aws-sdk-js-v3/blob/81afad00ca9394ca4d767468216743ac3ba90fb1/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-revision",
+    "sha256": "edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d",
+    "file": "upstream/edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d.txt"
+  },
+  {
+    "name": "@aws-sdk/credential-provider-login",
+    "version": "3.972.77",
+    "source": "https://github.com/aws/aws-sdk-js-v3/blob/81afad00ca9394ca4d767468216743ac3ba90fb1/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-revision",
+    "sha256": "edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d",
+    "file": "upstream/edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d.txt"
+  },
+  {
+    "name": "@aws-sdk/nested-clients",
+    "version": "3.997.44",
+    "source": "https://github.com/aws/aws-sdk-js-v3/blob/81afad00ca9394ca4d767468216743ac3ba90fb1/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-revision",
+    "sha256": "edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d",
+    "file": "upstream/edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d.txt"
+  },
+  {
+    "name": "filelist",
+    "version": "1.0.6",
+    "source": "https://github.com/mde/filelist/blob/7032f94d04ad905b4f32b92d2278785859e1d55f/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "file": "upstream/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt"
+  },
+  {
+    "name": "jake",
+    "version": "10.9.4",
+    "source": "https://github.com/jakejs/jake/blob/28a9960b506d3259dd2f708ea9bc82f615be91b5/LICENSE",
+    "review": "package-revision-or-version-tag",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "file": "upstream/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt"
+  },
+  {
+    "name": "esrecurse",
+    "version": "4.3.0",
+    "source": "https://github.com/estools/esrecurse/blob/8ceb63797813d9ac69572a671b95cf58ffdf35b6/README.md#license",
+    "review": "package-revision-or-version-tag",
+    "sha256": "cb1764d4708e870cc694de13d499af2e6ee98d2751026e3a3f79de608f4f4ea0",
+    "file": "upstream/cb1764d4708e870cc694de13d499af2e6ee98d2751026e3a3f79de608f4f4ea0.txt"
+  },
+  {
+    "name": "natural-compare",
+    "version": "1.4.0",
+    "source": "https://raw.githubusercontent.com/litejs/natural-compare-lite/a8e1e32c85713ba7d079445207a808ce6f4852f9/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-commit",
+    "sha256": "353fe762ba595bf1ffe786acf0f5984bb164205901d74f258af195fc8228c67d",
+    "file": "upstream/353fe762ba595bf1ffe786acf0f5984bb164205901d74f258af195fc8228c67d.txt"
+  },
+  {
+    "name": "@humanfs/types",
+    "version": "0.15.0",
+    "source": "https://github.com/humanwhocodes/humanfs/blob/85069f193cbacc371c3beb649ce746f8c5a493be/packages/box/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-commit",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "file": "upstream/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt"
+  },
+  {
+    "name": "@electron-internal/extract-zip",
+    "version": "1.0.5",
+    "source": "https://raw.githubusercontent.com/electron/extract-zip/3c33b76429ebd9bf724bcfc32d3e8fae7eeb3e82/LICENSE",
+    "review": "reviewed-upstream-license-at-pinned-commit",
+    "sha256": "edab8abb78d9c5b36944c3e00aebf6a90eb32378993f49ac8a3904007029c629",
+    "file": "upstream/edab8abb78d9c5b36944c3e00aebf6a90eb32378993f49ac8a3904007029c629.txt"
+  },
+  {
+    "name": "truncate-utf8-bytes",
+    "version": "1.0.2",
+    "source": "https://raw.githubusercontent.com/parshap/truncate-utf8-bytes/4212839ea184e74fb81f1e4e633e1db794ebe4f4/LICENSE.MIT.txt",
+    "review": "reviewed-upstream-license-at-pinned-commit",
+    "sha256": "bfefe6b48c92732f278120d7a3bf682c3b01e25fdc2e0327544cbb62a2fa9a8e",
+    "file": "upstream/bfefe6b48c92732f278120d7a3bf682c3b01e25fdc2e0327544cbb62a2fa9a8e.txt"
+  },
+  {
+    "name": "@mariozechner/clipboard",
+    "version": "0.3.9",
+    "source": "https://registry.npmjs.org/%40mariozechner%2Fclipboard/0.3.9",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "078bde42229273044b308926c175328fd08b8e65458ed4cc3120d0ffe0b624a7",
+    "file": "upstream/078bde42229273044b308926c175328fd08b8e65458ed4cc3120d0ffe0b624a7.txt"
+  },
+  {
+    "name": "@mariozechner/clipboard-darwin-arm64",
+    "version": "0.3.9",
+    "source": "https://registry.npmjs.org/%40mariozechner%2Fclipboard-darwin-arm64/0.3.9",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "15602f2b02f852af414b6acbd6cb709c9e7fa60b25bc674643e3827e839c2a3e",
+    "file": "upstream/15602f2b02f852af414b6acbd6cb709c9e7fa60b25bc674643e3827e839c2a3e.txt"
+  },
+  {
+    "name": "@mariozechner/clipboard-darwin-universal",
+    "version": "0.3.9",
+    "source": "https://registry.npmjs.org/%40mariozechner%2Fclipboard-darwin-universal/0.3.9",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "d6d62b36b32aad7a39f0d3b5ae97510e61265c9da750dcbd7c31959348607872",
+    "file": "upstream/d6d62b36b32aad7a39f0d3b5ae97510e61265c9da750dcbd7c31959348607872.txt"
+  },
+  {
+    "name": "chromium-pickle-js",
+    "version": "0.2.0",
+    "source": "https://registry.npmjs.org/chromium-pickle-js/0.2.0",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "7082bd8af6b7546871b4d133ee047626ce089d1488d93ac138a3dd4753567e63",
+    "file": "upstream/7082bd8af6b7546871b4d133ee047626ce089d1488d93ac138a3dd4753567e63.txt"
+  },
+  {
+    "name": "compare-version",
+    "version": "0.1.2",
+    "source": "https://registry.npmjs.org/compare-version/0.1.2",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "7d540052fb027d403401f38a660029d96f7d972fe3892e47f0ed327f977bb865",
+    "file": "upstream/7d540052fb027d403401f38a660029d96f7d972fe3892e47f0ed327f977bb865.txt"
+  },
+  {
+    "name": "cross-dirname",
+    "version": "0.1.0",
+    "source": "https://registry.npmjs.org/cross-dirname/0.1.0",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "4fb4f6843f73b05535f19ce9ee5bf491d35a143348ec125ddb27d5ac9d917e23",
+    "file": "upstream/4fb4f6843f73b05535f19ce9ee5bf491d35a143348ec125ddb27d5ac9d917e23.txt"
+  },
+  {
+    "name": "data-uri-to-buffer",
+    "version": "4.0.1",
+    "source": "https://registry.npmjs.org/data-uri-to-buffer/4.0.1",
+    "review": "license-embedded-in-published-package-readme",
+    "sha256": "b250d00d6b6c3308e11101189f8fe6f4a859f4cd015fc0bc4c8878cc186996dd",
+    "file": "upstream/b250d00d6b6c3308e11101189f8fe6f4a859f4cd015fc0bc4c8878cc186996dd.txt"
+  },
+  {
+    "name": "err-code",
+    "version": "2.0.3",
+    "source": "https://registry.npmjs.org/err-code/2.0.3",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "14e2f8106b8bad617333b6e5787f500d77853f20d31558a569c9c201f1edac42",
+    "file": "upstream/14e2f8106b8bad617333b6e5787f500d77853f20d31558a569c9c201f1edac42.txt"
+  },
+  {
+    "name": "is-reference",
+    "version": "3.0.3",
+    "source": "https://registry.npmjs.org/is-reference/3.0.3",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "ed1167c78cf99ad1717158d55ade36364babc6c9694eed85b720d5e9fa838b7f",
+    "file": "upstream/ed1167c78cf99ad1717158d55ade36364babc6c9694eed85b720d5e9fa838b7f.txt"
+  },
+  {
+    "name": "lazy-val",
+    "version": "1.0.5",
+    "source": "https://registry.npmjs.org/lazy-val/1.0.5",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "641e53a9c43c79ae657391b96e879c5e44cae2f890ba62cd10ddf2d63adc11c7",
+    "file": "upstream/641e53a9c43c79ae657391b96e879c5e44cae2f890ba62cd10ddf2d63adc11c7.txt"
+  },
+  {
+    "name": "locate-character",
+    "version": "3.0.0",
+    "source": "https://registry.npmjs.org/locate-character/3.0.0",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "a5544d805f41de81fa38ef81b49d02d09b7b2fee64cc0310b5affd1ad703abb9",
+    "file": "upstream/a5544d805f41de81fa38ef81b49d02d09b7b2fee64cc0310b5affd1ad703abb9.txt"
+  },
+  {
+    "name": "node-api-version",
+    "version": "0.2.1",
+    "source": "https://registry.npmjs.org/node-api-version/0.2.1",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "cf8928447a28df017025f3c40ad61b5ce58ad35badae2008af73b4ab48fc733f",
+    "file": "upstream/cf8928447a28df017025f3c40ad61b5ce58ad35badae2008af73b4ab48fc733f.txt"
+  },
+  {
+    "name": "read-binary-file-arch",
+    "version": "1.0.6",
+    "source": "https://registry.npmjs.org/read-binary-file-arch/1.0.6",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "06fb8678395b1282131e5b38faa407f9d09cc332a14f9749b9ead26dcc2aeec4",
+    "file": "upstream/06fb8678395b1282131e5b38faa407f9d09cc332a14f9749b9ead26dcc2aeec4.txt"
+  },
+  {
+    "name": "stackback",
+    "version": "0.0.2",
+    "source": "https://registry.npmjs.org/stackback/0.0.2",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "59da9b8d5ea15aeca81c444d7809b13f4ee63abb8092473a37a8ba5c827c1a7e",
+    "file": "upstream/59da9b8d5ea15aeca81c444d7809b13f4ee63abb8092473a37a8ba5c827c1a7e.txt"
+  },
+  {
+    "name": "temp-file",
+    "version": "3.4.0",
+    "source": "https://registry.npmjs.org/temp-file/3.4.0",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "4bb51f9c27b4981b9dadd1024d4a87dcd76cd7bce8c80fa2a0e07ecae48fed81",
+    "file": "upstream/4bb51f9c27b4981b9dadd1024d4a87dcd76cd7bce8c80fa2a0e07ecae48fed81.txt"
+  },
+  {
+    "name": "tmp-promise",
+    "version": "3.0.3",
+    "source": "https://registry.npmjs.org/tmp-promise/3.0.3",
+    "review": "declared-MIT-with-published-attribution-and-SPDX-terms",
+    "spdxSource": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/MIT.txt",
+    "sha256": "5b5f6ed50b5cc329d539e5fe3be8780e9c8a15bd8bc6b245e2efff3befc91210",
+    "file": "upstream/5b5f6ed50b5cc329d539e5fe3be8780e9c8a15bd8bc6b245e2efff3befc91210.txt"
+  }
+]

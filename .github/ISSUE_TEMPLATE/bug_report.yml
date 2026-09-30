@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible LocalChat ADE defect without sensitive data.
+title: 'bug: '
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include workspace contents, runtime keys, ChatGPT conversations, cookies, tokens, or bindings. Security issues must use the private reporting process after it is configured.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.0.1 / abc1234
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - macOS Apple Silicon
+        - Other (unsupported unless explicitly validated)
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use a disposable workspace and redact all sensitive values.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

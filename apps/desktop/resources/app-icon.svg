@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9edf2"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0.18" y1="0.12" x2="0.82" y2="0.9">
+      <stop offset="0" stop-color="#29e1df"/>
+      <stop offset="0.52" stop-color="#25b9f4"/>
+      <stop offset="1" stop-color="#2d7ff2"/>
+    </linearGradient>
+    <linearGradient id="leftCode" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#37e6dc"/>
+      <stop offset="1" stop-color="#27c9ee"/>
+    </linearGradient>
+    <linearGradient id="rightCode" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3ad2ef"/>
+      <stop offset="1" stop-color="#2f8cf3"/>
+    </linearGradient>
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.22"/>
+    </filter>
+    <filter id="bubbleShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0b1220" flood-opacity="0.30"/>
+    </filter>
+    <filter id="symbolShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="62" y="62" width="900" height="900" rx="210" fill="url(#tile)" filter="url(#tileShadow)"/>
+  <rect x="71" y="71" width="882" height="882" rx="202" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="5"/>
+
+  <path d="M266 268
+           C266 222 303 185 349 185
+           H700
+           C746 185 783 222 783 268
+           V633
+           C783 679 746 716 700 716
+           H590
+           L421 831
+           C392 851 352 830 352 794
+           V716
+           H349
+           C303 716 266 679 266 633
+           Z"
+        fill="url(#rim)" filter="url(#bubbleShadow)"/>
+
+  <path d="M315 293
+           C315 259 343 231 377 231
+           H672
+           C706 231 734 259 734 293
+           V608
+           C734 642 706 670 672 670
+           H573
+           L409 781
+           C399 788 385 781 385 768
+           V670
+           H377
+           C343 670 315 642 315 608
+           Z"
+        fill="#0f1f34"/>
+  <path d="M315 293
+           C315 259 343 231 377 231
+           H672
+           C706 231 734 259 734 293
+           V608
+           C734 642 706 670 672 670
+           H573
+           L409 781
+           C399 788 385 781 385 768
+           V670
+           H377
+           C343 670 315 642 315 608
+           Z"
+        fill="none" stroke="#1d3047" stroke-width="5"/>
+
+  <g filter="url(#symbolShadow)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M461 365 L378 450 L461 535" stroke="url(#leftCode)" stroke-width="46"/>
+    <path d="M588 365 L671 450 L588 535" stroke="url(#rightCode)" stroke-width="46"/>
+    <path d="M548 343 L497 553" stroke="#f8fafc" stroke-width="38"/>
+  </g>
+
+  <g filter="url(#symbolShadow)">
+    <circle cx="449" cy="618" r="24" fill="#74d5f8"/>
+    <circle cx="524" cy="618" r="24" fill="#79d8fa"/>
+    <circle cx="599" cy="618" r="24" fill="#74cdf5"/>
+  </g>
+</svg>

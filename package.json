@@ -1,0 +1,54 @@
+{
+  "name": "chatsplice",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "postinstall": "node scripts/prepare-native.mjs",
+    "clean:build": "node scripts/clean-build.mjs",
+    "build": "pnpm clean:build && pnpm -r --if-present build",
+    "dev": "pnpm build && pnpm --filter @chatsplice/desktop start",
+    "start": "pnpm --filter @chatsplice/desktop start",
+    "format": "node scripts/format.mjs --write",
+    "format:check": "node scripts/format.mjs --check",
+    "lint": "eslint .",
+    "test": "pnpm build && pnpm -r --if-present test:unit",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "verify": "pnpm format:check && pnpm lint && pnpm build && pnpm typecheck && pnpm -r --if-present test:unit && pnpm test:release && pnpm notices --require-complete",
+    "test:release": "node --test scripts/release-assets.test.mjs",
+    "notices": "node scripts/third-party-notices.mjs",
+    "readme:preview": "node scripts/readme-preview.mjs",
+    "source:pack": "node scripts/source-package.mjs",
+    "pack:mac": "pnpm notices --require-complete && pnpm build && pnpm --filter @chatsplice/desktop pack:mac",
+    "pack:mac:signed": "pnpm notices --require-complete && pnpm build && pnpm --filter @chatsplice/desktop pack:mac:signed"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.1",
+    "eslint": "10.8.1",
+    "prettier": "3.9.6",
+    "prettier-plugin-svelte": "4.1.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.67.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "electron",
+      "esbuild",
+      "node-pty"
+    ],
+    "overrides": {
+      "hono": "4.13.11",
+      "devalue": ">=5.9.2",
+      "undici": ">=8.10.2",
+      "tar": ">=7.5.21",
+      "brace-expansion@^5.0.0": "5.0.12"
+    }
+  }
+}

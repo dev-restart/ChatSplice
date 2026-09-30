@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200" role="img" aria-labelledby="t d">
+  <title id="t">ChatSplice</title>
+  <desc id="d">ChatGPT chat connects through MCP tool calls to a loopback MCP daemon and your local workspace.</desc>
+  <rect width="880" height="200" rx="16" fill="#0f172a"/>
+  <g font-family="-apple-system, Helvetica, Arial, sans-serif" fill="#e2e8f0" text-anchor="middle">
+    <rect x="40" y="60" width="220" height="80" rx="12" fill="#1e293b" stroke="#38bdf8"/>
+    <text x="150" y="98" font-size="20" font-weight="600">ChatGPT chat</text>
+    <text x="150" y="122" font-size="13" fill="#94a3b8">your plan, your models</text>
+    <rect x="330" y="60" width="220" height="80" rx="12" fill="#1e293b" stroke="#38bdf8"/>
+    <text x="440" y="98" font-size="20" font-weight="600">Loopback MCP</text>
+    <text x="440" y="122" font-size="13" fill="#94a3b8">22 bounded tools</text>
+    <rect x="620" y="60" width="220" height="80" rx="12" fill="#1e293b" stroke="#38bdf8"/>
+    <text x="730" y="98" font-size="20" font-weight="600">Your workspace</text>
+    <text x="730" y="122" font-size="13" fill="#94a3b8">files, checks, git</text>
+    <path d="M262 100h66M552 100h66" stroke="#38bdf8" stroke-width="2" marker-end="url(#a)"/>
+    <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#38bdf8"/></marker></defs>
+    <text x="440" y="178" font-size="14" fill="#94a3b8">ChatSplice never reads your conversation</text>
+  </g>
+</svg>

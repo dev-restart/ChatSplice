@@ -1,0 +1,137 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+
+jobs:
+  verify:
+    name: Verify macOS build
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24.18.0
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm verify
+
+  package-mac:
+    name: Package macOS arm64
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/v')
+    needs: verify
+    runs-on: macos-14
+    timeout-minutes: 40
+    env:
+      SIGNED_RELEASE: ${{ vars.CHATSPLICE_SIGNED_RELEASES == 'true' && startsWith(github.ref, 'refs/tags/v') }}
+      RELEASE_TAG: ${{ github.ref_name }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24.18.0
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - name: Validate tag before packaging
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: node scripts/release-assets.mjs "$RELEASE_TAG"
+      - name: Build unsigned DMG
+        if: env.SIGNED_RELEASE != 'true'
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: pnpm pack:mac
+      - name: Build signed and notarized DMG and ZIP
+        if: env.SIGNED_RELEASE == 'true'
+        env:
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          APPLE_API_KEY: ${{ secrets.APPLE_API_KEY }}
+          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+          APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+        run: |
+          test -n "$CSC_LINK" && test -n "$CSC_KEY_PASSWORD"
+          test -n "$APPLE_API_KEY" && test -n "$APPLE_API_KEY_ID" && test -n "$APPLE_API_ISSUER"
+          case "$RELEASE_TAG" in *-*) echo 'Signed update releases require a stable version.'; exit 1 ;; esac
+          umask 077
+          notarization_key="$RUNNER_TEMP/chatsplice-notarization.p8"
+          trap 'rm -f "$notarization_key"' EXIT
+          printf '%s' "$APPLE_API_KEY" > "$notarization_key"
+          export APPLE_API_KEY="$notarization_key"
+          pnpm pack:mac:signed
+          codesign --verify --deep --strict apps/desktop/release/mac-arm64/ChatSplice.app
+          xcrun stapler validate apps/desktop/release/mac-arm64/ChatSplice.app
+          spctl --assess --type execute apps/desktop/release/mac-arm64/ChatSplice.app
+      - name: Write SHA-256 manifest
+        run: |
+          asset_tag="$(node -p "'v' + require('./apps/desktop/package.json').version")"
+          if [ "$SIGNED_RELEASE" = 'true' ]; then
+            node scripts/release-assets.mjs "$asset_tag" --checksums --signed
+          else
+            node scripts/release-assets.mjs "$asset_tag" --checksums
+          fi
+      - name: Upload tested release assets
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: chatsplice-macos-arm64
+          path: |
+            apps/desktop/release/*.dmg
+            apps/desktop/release/*.zip
+            apps/desktop/release/latest-mac.yml
+            apps/desktop/release/SHA256SUMS.txt
+          if-no-files-found: error
+
+  release:
+    name: Publish versioned GitHub Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: package-mac
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ github.ref_name }}
+      SIGNED_RELEASE: ${{ vars.CHATSPLICE_SIGNED_RELEASES == 'true' }}
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: chatsplice-macos-arm64
+          path: assets
+      - name: Verify artifacts and publish (never overwrite an existing release)
+        shell: bash
+        run: |
+          cd assets
+          sha256sum --check SHA256SUMS.txt
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo 'Release already exists. Assets are immutable; inspect it before retrying.'
+            exit 1
+          fi
+          if [ "$SIGNED_RELEASE" = 'true' ]; then
+            test -f latest-mac.yml
+            test -f "ChatSplice-${RELEASE_TAG#v}-arm64.zip"
+            printf '%s\n' 'Apple Silicon build, signed and notarized. Includes the ZIP/update feed for stable-channel app updates.' > release-notes.md
+            gh release create "$RELEASE_TAG" --verify-tag --draft --title "ChatSplice $RELEASE_TAG" --notes-file release-notes.md
+          else
+            printf '%s\n' 'Unsigned Apple Silicon pre-release. Verify SHA256SUMS.txt, then copy ChatSplice.app to Applications. Gatekeeper may require user approval. Updates use manual app replacement; no automatic installation.' > release-notes.md
+            gh release create "$RELEASE_TAG" --verify-tag --draft --prerelease --title "ChatSplice $RELEASE_TAG (unsigned)" --notes-file release-notes.md
+          fi
+          gh release upload "$RELEASE_TAG" ./*.dmg SHA256SUMS.txt
+          if [ "$SIGNED_RELEASE" = 'true' ]; then gh release upload "$RELEASE_TAG" ./*.zip latest-mac.yml; fi
+          gh release edit "$RELEASE_TAG" --draft=false

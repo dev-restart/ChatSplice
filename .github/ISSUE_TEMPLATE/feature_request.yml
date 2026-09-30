@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a bounded capability with its security and verification impact.
+title: 'feature: '
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the workflow problem, not only a preferred implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Bounded proposal
+      description: Include scope, non-goals, workspace/secret boundary, and expected verification.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety review
+      options:
+        - label: This proposal does not require ChatGPT DOM scraping, private endpoints, arbitrary shell input, or unbounded workspace discovery.
+          required: true
