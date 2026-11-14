@@ -29,6 +29,14 @@ jobs:
         with:
           node-version: 24.18.0
           package-manager-cache: false
+      - name: Select the runner's Xcode Command Line Tools
+        shell: bash
+        run: |
+          clt=/Library/Developer/CommandLineTools
+          test -x "$clt/usr/bin/clang"
+          sudo xcode-select --switch "$clt"
+          test "$(xcode-select -p)" = "$clt"
+          xcrun --show-sdk-path
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       - name: Select the runner's installed Rust toolchain
