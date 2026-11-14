@@ -31,7 +31,19 @@ jobs:
           package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      - run: pnpm verify
+      - name: Select the runner's installed Rust toolchain
+        shell: bash
+        run: |
+          rustup_path="$(command -v rustup || printf '%s/bin/rustup' "$(brew --prefix rustup)")"
+          cargo_path="$(RUSTUP_AUTO_INSTALL=0 "$rustup_path" which --toolchain stable cargo)"
+          rust_bin="$(cd -P "$(dirname "$cargo_path")" && pwd)"
+          "$rust_bin/cargo" --version
+          "$rust_bin/rustc" --version
+          printf '%s\n' "$rust_bin" >> "$GITHUB_PATH"
+      - name: Verify source
+        env:
+          VITEST_MAX_WORKERS: '3'
+        run: pnpm verify
       - name: Provision pinned preview browser
         run: pnpm browser:setup
       - name: Verify browser assertions and MCP failure evidence
