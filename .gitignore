@@ -1,0 +1,31 @@
+node_modules/
+dist/
+coverage/
+.pnpm-store/
+.DS_Store
+*.log
+.localchat/
+
+# Private runtime and local credentials
+.chatsplice/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.pem
+*.key
+*.p12
+*.pfx
+apps/desktop/release/
+mcp-token
+control-mutation-token
+tunnel-runtime-key.enc
+
+# Local maintainer notes and registry configuration
+/docs/agent-progress.md
+/docs/historical/
+/docs/local/
+.npmrc

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+
+jobs:
+  verify:
+    name: Verify macOS build
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 24.18.0
+          package-manager-cache: false
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm verify
+      - name: Provision pinned preview browser
+        run: pnpm browser:setup
+      - name: Verify browser assertions and MCP failure evidence
+        run: pnpm test:browser
+      - name: Verify the rendered owner Goal flow
+        run: pnpm test:goal-ui
+      - name: Verify real MCP developer workflows
+        env:
+          CHATSPLICE_BROWSER_TESTS: '1'
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/packages/mcp-server/node_modules/.cache/chatsplice-playwright
+          PLAYWRIGHT_SKIP_BROWSER_GC: '1'
+        run: pnpm --filter @chatsplice/mcp-server exec vitest run src/execution/developer-workflow.test.ts src/execution/multi-project-workflow.test.ts

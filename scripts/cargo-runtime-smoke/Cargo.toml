@@ -1,0 +1,11 @@
+[package]
+name = "chatsplice-runtime-smoke"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+# Keep this dependency-free diagnostic independent of any enclosing workspace.
+[workspace]

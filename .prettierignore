@@ -1,0 +1,7 @@
+dist
+node_modules
+coverage
+pnpm-lock.yaml
+
+# Preserve exact upstream license texts
+THIRD_PARTY_NOTICES.md

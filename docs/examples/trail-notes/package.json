@@ -1,0 +1,8 @@
+{
+  "name": "trail-notes",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-reporter=spec"
+  }
+}

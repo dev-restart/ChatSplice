@@ -1,0 +1,3 @@
+[build]
+# Keep generated artifacts out of the source snapshot used by build:staged.
+target-dir = "../../node_modules/.cache/chatsplice-cargo-runtime-smoke"

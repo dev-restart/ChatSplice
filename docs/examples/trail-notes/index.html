@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trail Notes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f2e9;
+        color: #18382d;
+        font:
+          16px system-ui,
+          sans-serif;
+      }
+      header {
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 54px;
+        border-bottom: 1px solid #dcded1;
+        font-weight: 650;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 19px;
+      }
+      .icon {
+        border-radius: 50%;
+        background: #244c3e;
+        color: #f5f2e9;
+        width: 29px;
+        height: 29px;
+        display: grid;
+        place-items: center;
+        font: 700 15px Georgia;
+      }
+      nav {
+        font-size: 13px;
+        color: #4b655b;
+      }
+      main {
+        padding: 57px 54px 0;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #4a6a57;
+      }
+      h1 {
+        margin: 12px 0 10px;
+        font:
+          500 63px/1.04 Georgia,
+          serif;
+        letter-spacing: -2.8px;
+      }
+      .intro {
+        color: #486057;
+        margin: 0;
+        font-size: 19px;
+      }
+      .hero {
+        border: 1px solid #d9dece;
+        border-radius: 22px;
+        position: relative;
+        overflow: hidden;
+        padding: 39px 35px;
+        background: #e6eddd;
+      }
+      .hero div {
+        position: relative;
+        z-index: 1;
+      }
+      .terrain {
+        position: absolute;
+        inset: auto 0 0 auto;
+        width: 355px;
+        height: 100%;
+        opacity: 0.76;
+      }
+      .terrain span {
+        position: absolute;
+        width: 340px;
+        height: 290px;
+        background: #a1b99f;
+        border-radius: 47% 53% 45% 55%;
+        transform: rotate(28deg);
+        right: -67px;
+        bottom: -156px;
+      }
+      .terrain span:first-child {
+        width: 310px;
+        height: 270px;
+        right: -5px;
+        bottom: -156px;
+        background: #bdccb2;
+        transform: rotate(-21deg);
+      }
+      .terrain span:last-child {
+        width: 225px;
+        height: 208px;
+        right: -93px;
+        bottom: -44px;
+        background: #839d86;
+      }
+      h2 {
+        margin: 29px 0 12px;
+        font:
+          650 18px/1.1 system-ui,
+          sans-serif;
+      }
+      .categories {
+        display: flex;
+        gap: 13px;
+      }
+      .categories span {
+        border: 1px solid #dedfd1;
+        border-radius: 10px;
+        padding: 13px 15px;
+        background: #faf8ef;
+        font-size: 15px;
+        font-weight: 600;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="logo"><span class="icon" aria-hidden="true">T</span>Trail Notes</span>
+      <nav>My trails</nav>
+    </header>
+    <main>
+      <section class="hero">
+        <aside class="terrain" aria-hidden="true"><span></span><span></span><span></span></aside>
+        <div>
+          <span class="eyebrow">Your hiking planner</span>
+          <h1></h1>
+          <p class="intro">Find an outdoor route and keep it for the weekend.</p>
+        </div>
+      </section>
+      <h2>Explore by trip</h2>
+      <div class="categories"></div>
+    </main>
+    <script type="module">
+      import { welcomeTitle, trailCategories } from '/welcome.js';
+      document.querySelector('h1').textContent = welcomeTitle();
+      for (const name of trailCategories) {
+        const item = document.createElement('span');
+        item.textContent = name;
+        document.querySelector('.categories').append(item);
+      }
+    </script>
+  </body>
+</html>
